@@ -18,8 +18,8 @@
       <ul class="navbar-nav navbar-right">
         <!-- Authentication Links -->
         @guest
-        <li class="nav-item"><a class="nav-link" href="{{ route('login')}}">Login</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('register')}}">Sign up</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('login')}}">登录</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('register')}}">注册</a></li>
 
         @else
         <li class="nav-item dropdown">
@@ -28,9 +28,9 @@
             {{ Auth::user()->name }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a href="{{ route('user_addresses.index') }}" class="dropdown-item">Address List</a>
+            <a href="{{ route('user_addresses.index') }}" class="dropdown-item">收货地址列表</a>
             <a class="dropdown-item" id="logout" href="#"
-               onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+               onclick="event.preventDefault();document.getElementById('logout-form').submit();">退出登录</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               {{ csrf_field() }}
             </form>
